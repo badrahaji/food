@@ -1,0 +1,62 @@
+.singleitemcard {
+    display: block;
+    
+    border: 1px solid orange;
+    text-align: center;}
+.singlecardtext {
+    position: relative;
+    color: black;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.singlecardimg img{
+    /* position: relative; */
+    border: 1px solid orange;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+.header {
+    margin-top: 30px; 
+    margin-bottom: 50px;
+   background-color: white;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.header h3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.itemslist {
+    /* position: relative; */
+    /* background-image: url("https://www.foodandwine.com/thmb/4FmqWbw5zrr65S3R7l9eYYP9b1w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tips-for-hosting-holiday-guests-FT-BLOG1121-b94e4b800d2641b7a86d7611be67ac58.jpg"); */
+    margin-left: 60px;
+position: relative;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 220px 220px 220px 220px;
+    justify-content: space-evenly;
+    font-weight: 600px;
+    align-items: center;}
+.storebtn{
+    background-color: orange;
+    font-weight: bold;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: none;
+    width: 250px;
+    height: 50px;
+}
+.menu{
+    justify-content: center;
+    align-items: center;
+}

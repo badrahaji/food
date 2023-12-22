@@ -1,1 +1,1 @@
-console.log("by hi a");
+const  console.log("by hi a");

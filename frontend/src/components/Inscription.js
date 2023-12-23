@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Navbar from './Navbar'
 const Inscription = () => {
   return (
-    <div>Inscription</div>
+    
+    <div>
+        <Navbar/>
+    Inscription</div>
   )
 }
 

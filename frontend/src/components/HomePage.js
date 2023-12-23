@@ -1,7 +1,7 @@
 import React from "react"
 import Navb from "./Navbar"; 
 import NosService from "./NosService "
-import Menu from './Menu'
+import Menu from '../Style/menu.css'
 // import Footer from "./components/Footer";
 const HomePage = () => {
     return (

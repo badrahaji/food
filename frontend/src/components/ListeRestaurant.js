@@ -2,7 +2,7 @@
 import { Link, Routes,Route } from "react-router-dom";
 import {useParams} from "react-router-dom"
 import React, { useState } from 'react';
-import './ListeRestaurant.css';
+import '../Style/ListeRestaurant.css';
 import restaurantsData from "./restaurentData"
 import Navb from "./Navbar"; 
 // ... (code précédent)

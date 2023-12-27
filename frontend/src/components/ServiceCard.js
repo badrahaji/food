@@ -8,14 +8,15 @@ const ServiceCard = ({ id,image, title, description }) => {
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    textAlign: 'center '
   };
   return (
     <div className="col-md-4">
       <div className="card" style={cardStyle}>
-      <Link to={`/services/${id}`}>
-        <div className="card-body">
           <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
+      <Link to={`/${title}`}>
+        <div className="card-body">
+          {/* <p className="card-text">{description}</p> */}
         </div>
       </Link>
       </div>

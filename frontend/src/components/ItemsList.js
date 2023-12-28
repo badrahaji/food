@@ -1,6 +1,6 @@
 import React from 'react'
 import SingleitemCard from './SingleitemCard'
-import "../Style/menu.css";
+import "./menu.css";
 
 
 

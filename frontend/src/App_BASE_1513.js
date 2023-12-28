@@ -2,7 +2,6 @@ import HomePage from "./components/HomePage";
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import ListeRestaurant from "./components/ListeRestaurant";
 import Restaurantmenu from "./components/Restaurantmenu";
-// jjj
 const App = () => {
     return (
 <div>
@@ -21,4 +20,11 @@ const App = () => {
 </div>
 
 
+    )
+};
 export default App;
+
+
+
+
+

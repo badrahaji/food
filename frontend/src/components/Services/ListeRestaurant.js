@@ -2,23 +2,9 @@
 import { Link, Routes,Route } from "react-router-dom";
 import {useParams} from "react-router-dom"
 import React, { useState } from 'react';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:frontend/src/components/ListeRestaurant.js
-import '../Style/ListeRestaurant.css';
+import './ListeRestaurant.css';
 import restaurantsData from "./restaurentData"
 import Navb from "./Navbar"; 
-=======
->>>>>>> main
-import './ListeRestaurant.css';
-import restaurantsData from "../restaurentData"
-import Navb from "../Navbar"; 
-import services from '../ServicesData'
-
-<<<<<<< HEAD
-=======
->>>>>>> badr:frontend/src/components/Services/ListeRestaurant.js
->>>>>>> main
 // ... (code précédent)
 const ListeRestaurant = () => {
   let {title}=useParams('');

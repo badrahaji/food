@@ -1,7 +1,7 @@
 // src/components/ServiceCard.js
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './ServiceCard.css';
+import '../Style/ServiceCard.css';
 import { Link} from 'react-router-dom';
 const ServiceCard = ({ id,image, title, description }) => {
   const cardStyle = {

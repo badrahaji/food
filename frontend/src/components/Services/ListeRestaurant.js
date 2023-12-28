@@ -7,9 +7,12 @@ import restaurantsData from "../restaurentData"
 import Navb from "../Navbar"; 
 import services from '../ServicesData'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import FilterServices from "./FilterServices";
 =======
 >>>>>>> origin/main
+=======
+>>>>>>> 8d651f1a0447a079ad82f7dfc8b053372a659404
 
 // ... (code précédent)
 const ListeRestaurant = () => {
@@ -27,12 +30,16 @@ const ListeRestaurant = () => {
   return (
     <div className="restaurant-page">
 <<<<<<< HEAD
+<<<<<<< HEAD
       
        <div className="all-restaurents"style={{marginTop:"50px"}}>
       <FilterServices/>
 =======
        <div style={{marginTop:"50px"}}>
 >>>>>>> origin/main
+=======
+       <div style={{marginTop:"50px"}}>
+>>>>>>> 8d651f1a0447a079ad82f7dfc8b053372a659404
       <section className="search-section">
         <input
           type="text"

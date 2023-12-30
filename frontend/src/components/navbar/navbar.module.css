@@ -9,7 +9,16 @@
     z-index: 99999; 
 }
 /* 5 9s */
+.navBarLogin{
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+}
+.navBarLogin input{
+    border: 1px black solid;
+    border-radius:  5px;
 
+}
 .scrolled{
     box-shadow: -5px 5px 19px -5px rgba(0, 0, 0, 0.08);
     -webkit-box-shadow: -5px 5px 19px -5px rgba(0, 0, 0, 0.08);

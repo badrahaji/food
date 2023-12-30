@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import "./menu.css";
+import "../Style/menu.css";
 function SingleitemCard({title,prix,imgurl,description}) {
   return (
     <div className='signleitemcard'> 

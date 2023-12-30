@@ -1,3 +1,4 @@
+
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import Navbar from './components/navbar/Navbar';
@@ -13,14 +14,13 @@ import Checkout from './components/checkout/Checkout';
 import {useLocation} from 'react-router-dom'
 import { useEffect } from 'react';
 import ListeRestaurant from './components/Services/ListeRestaurant';
+
 function App() {
  const location = useLocation()
  
  useEffect(() => {
    window.scrollTo(0, 0)
  }, [location.pathname])
-
-
   return (
     <div>
        <Navbar />

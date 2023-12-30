@@ -1,6 +1,6 @@
 import ItemsList from "./ItemsList";
 import Offer from "./Offer"
-import "./menu.css";
+import "../Style/menu.css";
 function Menu() {
   return (
     <div className="menu">

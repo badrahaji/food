@@ -1,0 +1,37 @@
+/* Fichier : listerestaurant.css */
+
+.restaurant-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-section {
+  margin-bottom: 20px;
+  
+}
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.restaurant-card {
+  width: calc(30% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px
+}

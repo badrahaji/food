@@ -1,0 +1,39 @@
+/* src/components/ServiceCard.css */
+.card {
+    margin-bottom: 20px;
+    color: #fff; /* Couleur du texte */
+    text-align: left; /* Alignement du texte à gauche */
+    height: 300px; /* Hauteur du card, ajustez selon vos besoins */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative; /* Ajout d'une position relative pour positionner le texte */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; /* Ajustez la hauteur selon vos besoins */
+    padding: 20px; /* Ajout de rembourrage pour espacement */
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+    font-weight: bold; /* Mise en gras du titre */
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .card:hover .card-text {
+    color: #ffc107; /* Couleur du texte au survol */
+  }
+  
+  

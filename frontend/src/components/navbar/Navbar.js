@@ -48,12 +48,7 @@ const Navbar = () => {
               <Link to='/create'>Create</Link>
             </li>
           </ul>
-          <div>
-            <div className={classes.navBarLogin}>
-            <input placeholder='   Adresse e-mail'/>
-            <input placeholder='   Password'/>
-            </div>
-          </div >
+          
         </div>
         <div className={classes.right}>
           <AiOutlineUser className={classes.userIcon}/>

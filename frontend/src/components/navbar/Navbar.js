@@ -17,6 +17,7 @@ const Navbar = () => {
     return () => (window.onscroll = null)
   }
 
+
   // const handleLogout = () => {
   //   dispatch(logout())
   //   navigate('/login')
@@ -36,17 +37,25 @@ const Navbar = () => {
               <a href="#">Home</a>
             </li>
             <li className={classes.listItem}>
-              <a href="#contacts">Contacts</a>
+              <a href="#contacts">About Us</a>
+            </li>
+            {/* <li className={classes.listItem}>
+              <a href="#foods">Restaurants</a>
             </li>
             <li className={classes.listItem}>
-              <a href="#foods">Foods</a>
+              <a href="#faq">Patesseries</a>
             </li>
             <li className={classes.listItem}>
-              <a href="#faq">FAQ</a>
-            </li>
-            <li className={classes.listItem}>
-              <Link to='/create'>Create</Link>
-            </li>
+              <Link to='/create'>Supperette</Link>
+            </li> */}
+            <li>
+    <select name="dog-names" id="dog-names" className={classes.servicesDrop}> 
+        <option value="rigatoni">Nos services</option> 
+        <option value="dave">Restaurants</option> 
+        <option value="pumpernickel">Patesseries</option> 
+        <option value="reeses">Superette</option> 
+    </select>
+   </li>
           </ul>
           
         </div>

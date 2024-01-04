@@ -16,7 +16,6 @@ const upload = multer({
     storage
     // same as storage: storage
 })
-
 // req.body.image
 uploadController.post('/image', verifyToken, upload.single('image'), (req, res) => {
   try {

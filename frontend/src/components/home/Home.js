@@ -11,7 +11,7 @@ import NosService from '../NosService '
 const Home = () => {
   return (
     <div className={classes.container}>
-        <Hero />
+        <Hero/>
       <div className={classes.wrapper}>
 <NosService/>
         <div className={classes.delivery}>

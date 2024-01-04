@@ -13,7 +13,6 @@ const Signup = () => {
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const handleSignup = async(e) => {
     e.preventDefault()
     try {

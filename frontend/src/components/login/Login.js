@@ -53,13 +53,12 @@ const Login = () => {
           </form>
           {
             error && <div className={classes.errorMessage}>
-                 Wrong credentials! Try different ones
+          Wrong credentials! Try different ones
             </div>
           }
         </div>
       </div>
     </div>
-  )
+)
 }
-
-export default Login
+export default Login;

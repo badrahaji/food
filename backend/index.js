@@ -20,9 +20,8 @@ app.use('/images', express.static('public/images'))
 app.use('/auth', authController)
 app.use('/product', productController)
 app.use('/upload', uploadController)
-
 // start our server
-app.listen(process.env.PORT, () => console.log('Server has been started successfully'))
+app.listen(process.env.PORT, () => console.log(`Server has been started successfully ${process.env.PORT}`))
 
 // server is on port 5000, client is on port 3000,
-// we are going to get a cors ERROR!!, but cors() removes that's error
+// we are going to get a cors ERROR!!, but cors() removes that's error require('dotenv').config()require('dotenv').config();

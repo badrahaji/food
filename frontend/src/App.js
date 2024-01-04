@@ -14,6 +14,8 @@ import Checkout from './components/checkout/Checkout';
 import {useLocation} from 'react-router-dom'
 import { useEffect } from 'react';
 import ListeRestaurant from './components/Services/ListeRestaurant';
+import Restaurents from './components/restaurents/Restaurents';
+import Patesseries from './components/pattesserie/Patesseries';
 
 function App() {
  const location = useLocation()
@@ -33,6 +35,9 @@ function App() {
          <Route path='/foods/:id' element={<FoodCatalog />} />
          <Route path='/cart' element={<Cart />} />
          <Route path='/checkout' element={<Checkout />} />
+         <Route path='/Restaurents' element={<Restaurents/>} />
+         <Route path='/Patessiries' element={<Patesseries/>} />
+
          <Route path='/:title' element={<ListeRestaurant />} />
        </Routes>
        <Footer />

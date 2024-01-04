@@ -46,9 +46,6 @@ const ListeRestaurant = () => {
           </div>
         ))}
       </section>
- {/* <Routes> */}
-
- {/* </Routes> */}
     </div>
   );
 };

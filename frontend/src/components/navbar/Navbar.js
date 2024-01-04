@@ -11,13 +11,16 @@ const Navbar = () => {
   const {products} = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true)
     return () => (window.onscroll = null)
   }
 
-
+ const handleLogin = () => {
+    // dispatch(logout())
+    navigate('/login')
+  }
   // const handleLogout = () => {
   //   dispatch(logout())
   //   navigate('/login')
@@ -34,27 +37,23 @@ const Navbar = () => {
         <div className={classes.center}>
           <ul className={classes.list}>
           <li className={classes.listItem}>
-              <a href="#">Home</a>
+              <Link to='/'>Accueil</Link>
             </li>
             <li className={classes.listItem}>
-              <a href="#contacts">About Us</a>
-            </li>
-            {/* <li className={classes.listItem}>
-              <a href="#foods">Restaurants</a>
+              <a href="#contacts">Contact</a>
             </li>
             <li className={classes.listItem}>
-              <a href="#faq">Patesseries</a>
-            </li>
-            <li className={classes.listItem}>
-              <Link to='/create'>Supperette</Link>
-            </li> */}
-            <li>
-    <select name="dog-names" id="dog-names" className={classes.servicesDrop}> 
+              <Link to="/Restaurents"> Restaurents</Link>
+              </li>
+
+              <li className={classes.listItem}>
+              <Link to="/Patessiries"> Patessiries</Link>
+    {/* <select name="dog-names" id="dog-names" className={classes.servicesDrop}> 
         <option value="rigatoni">Nos services</option> 
         <option value="dave">Restaurants</option> 
         <option value="pumpernickel">Patesseries</option> 
         <option value="reeses">Superette</option> 
-    </select>
+    </select> */}
    </li>
           </ul>
           
@@ -67,6 +66,8 @@ const Navbar = () => {
           </Link>
          
           {/* <button onClick={handleLogout} className={classes.logout}>Logout</button> */}
+          <button onClick={handleLogin} className={classes.login}>Login </button>
+
         </div>
       </div>
     </div>

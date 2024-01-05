@@ -10,7 +10,13 @@
     left: 0;
     z-index: 999999;
 }
+.userrole{
+    display: flex;
+    font-size: large;
+    gap: 20;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+}
 .signUpWrapper{
     border-radius: 20px;
     width: 45vw;

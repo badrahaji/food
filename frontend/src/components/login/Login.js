@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux'
 import {Link, useNavigate} from 'react-router-dom'
 import img from '../../assets/womaneating2.jpg'
 import { login } from '../../redux/authSlice'
+import axios from 'axios'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -17,24 +18,22 @@ const Login = () => {
       e.preventDefault()
 
       try {
-        const res = await fetch(`http://localhost:5000/auth/login`, {
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          method: "POST",
-          body: JSON.stringify({email, password})
-        })
-
-        const data = await res.json()
-        console.log(data)
-        dispatch(login(data)) // {userInfo, token}
-        navigate("/")
-        
+        const res = await axios.post(`http://localhost:5000/auth/login`, {
+          email,
+          password,
+        });
+  
+        const data = res.data;
+        console.log(data);
+        dispatch(login(data)); // Assuming login is an action to update user state
+        navigate("/");
+  
       } catch (error) {
-        setError(true)
+        console.error(error.response || error); // Axios errors have a 'response' property
+        setError(true);
         setTimeout(() => {
-          setError(false)
-        }, 3000)
+          setError(false);
+        }, 3000);
       }
   }
   return (

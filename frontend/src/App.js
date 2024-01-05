@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import ListeRestaurant from './components/Services/ListeRestaurant';
 import Restaurents from './components/restaurents/Restaurents';
 import Patesseries from './components/pattesserie/Patesseries';
+import ProductsDetails from './components/products/ProductsDetails';
 
 function App() {
  const location = useLocation()
@@ -35,7 +36,7 @@ function App() {
          <Route path='/foods/:id' element={<FoodCatalog />} />
          <Route path='/cart' element={<Cart />} />
          <Route path='/checkout' element={<Checkout />} />
-         <Route path='/Restaurents' element={<Restaurents/>} />
+         <Route path='/Restaurents' element={<Restaurents/>}/>
          <Route path='/Patessiries' element={<Patesseries/>} />
 
          <Route path='/:title' element={<ListeRestaurant />} />

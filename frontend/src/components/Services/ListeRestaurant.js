@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import './ListeRestaurant.css';
 import restaurantsData from "../restaurentData"
 import services from '../ServicesData';
+import ProductList from "../products/ProductList";
 // ... (code précédent)
 const ListeRestaurant = () => {
   let {title}=useParams('');
@@ -40,12 +41,15 @@ const ListeRestaurant = () => {
             <p>{restaurant.position}</p>
             <p>Email: {restaurant.contact.email}</p>
             <p>Téléphone: {restaurant.contact.phone}</p>
-            <Link to={`/${title}/restaurent/`}> <button> Go to this resto </button>
+            <Link to={`/Restaurents/restaurent1/`}> <button> Go to this resto </button>
         </Link>
 
           </div>
         ))}
       </section>
+      <Routes>
+        <Route path="/Restaurants/:restaurantId" element={<ProductList/>} />
+      </Routes>
     </div>
   );
 };

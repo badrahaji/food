@@ -1,8 +1,9 @@
-const productController = require("express").Router()
-const Product = require("../models/restaurentproduct")
+const restaurentProController = require("express").Router()
+const Product = require("../models/Product")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')
+
 // get all
-productController.get('/', verifyToken, async(req, res) => {
+restaurentProController.get('/', verifyToken, async(req, res) => {
     try {
         const products = await Product.find(req.query)
         return res.status(200).json(products)
@@ -10,8 +11,9 @@ productController.get('/', verifyToken, async(req, res) => {
         console.error(error)
     }
 })
+
 // get one
-productController.get('/find/:id', verifyToken, async(req, res) => {
+restaurentProController.get('/find/:id', verifyToken, async(req, res) => {
    try {
     const productId = req.params.id
     const product = await Product.findById(productId)
@@ -24,7 +26,7 @@ productController.get('/find/:id', verifyToken, async(req, res) => {
    }
 })
 // create product
-productController.post('/', verifyTokenAdmin, async(req, res) => {
+restaurentProController.post('/', verifyTokenAdmin, async(req, res) => {
     try {
         const newProduct = await Product.create({...req.body})
         return res.status(201).json(newProduct)
@@ -33,4 +35,4 @@ productController.post('/', verifyTokenAdmin, async(req, res) => {
     }
 })
 
-module.exports = productController
+module.exports = restaurentProController

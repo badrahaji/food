@@ -1,0 +1,18 @@
+.leftSideDashboad{
+    display:flex;
+    flex-direction: column;
+}
+.dashboad_container{
+    display: flex;
+   margin-top: 100px;
+   
+   height: 100%;
+}
+.dashboad_container_leftside{
+    width: 400px;
+    font-size:larger;
+}
+.dashboad_container_rightside{
+    height: 500px;
+    border: 1px solid black;
+}

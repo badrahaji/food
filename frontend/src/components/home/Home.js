@@ -35,7 +35,7 @@ const Home = () => {
           </div>
         </div>
         <Foods />
-        <Newsletter />
+        {/* <Newsletter /> */}
       </div>
     </div>
   )

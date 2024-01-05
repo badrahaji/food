@@ -1,20 +1,19 @@
 const mongoose = require("mongoose")
 
-const RestaurentSchema = new mongoose.Schema({
-    name: {
+const RestoProductSchema = new mongoose.Schema({
+    title: {
         type: String,
         required: true,
-        min: 5,
+        min: 4,
     },
-    location: {
-        type: String,
-        required: true,
-        min: 10,
-    },
-    telephone: {
+    desc: {
         type: String,
         required: true,
         min: 8,
+    },
+    price: {
+        type: Number,
+        required: true,
     },
     img: {
         type: String,
@@ -23,7 +22,11 @@ const RestaurentSchema = new mongoose.Schema({
     review: {
         type: Number,
         required: true,
+    },
+    category: {
+        type: String,
+        required: true,
     }
 })
 
-module.exports = mongoose.model("Restaurent", RestaurentSchema)
+module.exports = mongoose.model("RestoProduct", ProductSchema)

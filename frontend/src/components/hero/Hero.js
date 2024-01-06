@@ -5,7 +5,7 @@ import manEating from '../../assets/man-having-his-meal.svg'
 
 const Hero = () => {
   return (
-    <section style={{height: '200vh'}} id="home" className={classes.container}>
+    <section style={{height: '80vh'}} id="home" className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
           <h2 className={classes.title}>Do you crave delicious food</h2>

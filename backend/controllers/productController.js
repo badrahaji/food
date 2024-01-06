@@ -3,14 +3,15 @@ const Product = require("../models/Product")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')
 
 // get all
-productController.get('/', verifyToken, async(req, res) => {
+productController.get('/', async (req, res) => {
     try {
-        const products = await Product.find(req.query)
-        return res.status(200).json(products)
+      const products = await Product.find({});
+      res.json(products);
     } catch (error) {
-        console.error(error)
+      console.error(error);
+      res.status(500).json({ message: "Error fetching the products." });
     }
-})
+  });
 
 // get one
 productController.get('/find/:id', verifyToken, async(req, res) => {

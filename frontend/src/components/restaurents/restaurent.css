@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.restaurent-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+.restaurant-card {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    row-gap:  30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  .restaurant-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }

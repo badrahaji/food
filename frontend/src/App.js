@@ -17,11 +17,8 @@ import ListeRestaurant from './components/Services/ListeRestaurant';
 import Restaurents from './components/restaurents/Restaurents';
 import Patesseries from './components/pattesserie/Patesseries';
 import ProductsDetails from './components/products/ProductsDetails';
-import Dashboard from './components/Admin/Dashbord';
-import AdminDashboard from './components/Admin/AdminDashboard';
-import AdminRoute from './components/Routes/AdminRoute';
 import Users from './components/Admin/Users';
-
+import AdminDashboard from './components/Admin/AdminDashboard'
 function App() {
  const location = useLocation()
  
@@ -35,12 +32,10 @@ function App() {
          <Route path='/' element={<Home />} />
          <Route path='/login' element={<Login />} />
          <Route path='/signup' element={<Signup />} />
-         <Route path="/dashboard" element={<Dashboard/>}>
-          <Route path="admin" element={<AdminDashboard />} />
+         <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="admin/create-product" element={<Create />} />
           <Route path="admin/users" element={<Users/>} />
-        </Route>
-         <Route path='/dashboard' element={<Dashboard/>}/>
+  
          <Route path='/food/:id' element={<FoodDetails />} />
          <Route path='/foods/:id' element={<FoodCatalog />} />
          <Route path='/cart' element={<Cart />} />

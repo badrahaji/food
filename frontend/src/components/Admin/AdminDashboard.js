@@ -1,25 +1,29 @@
-import React from "react";
-import AdminMenu from "./AdminMenu";
-import { useAuth } from "./auth";
+import React from 'react'
+import Sidebar from '../Sidebar'
+import { Route, Routes } from 'react-router'
+import Dashboard from "./Dashboard"
+import About from './About'
+import Comment from './Comment'
+import Analytics from './Analytics'
+import Product from './Product'
+import ProductList from './ProductList'
+import './dashboard.css'
 const AdminDashboard = () => {
-  const [auth] = useAuth();
   return (
-  
-      <div className="container-fluid m-3 p-3">
-        <div className="row">
-          <div className="col-md-3">
-            <AdminMenu/>
-          </div>
-          <div className="col-md-9">
-            <div className="card w-75 p-3">
-              <h3> Admin Name : {auth?.user?.name}</h3>
-              <h3> Admin Email : {auth?.user?.email}</h3>
-              <h3> Admin Contact : {auth?.user?.phone}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-  );
-};
+    <div className='dashboard'>
+        <Sidebar>
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/dashboard/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/about" element={<About />} />
+          <Route path="/dashboard/comment" element={<Comment/>} />
+          <Route path="/dashboard/analytics" element={<Analytics />} />
+          <Route path="/dashboard/product" element={<Product />} />
+          <Route path="/dashboard/productList" element={<ProductList />} />
+        </Routes>
+      </Sidebar>
+    </div>
+  )
+}
 
-export default AdminDashboard;
+export default AdminDashboard

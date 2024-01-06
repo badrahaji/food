@@ -51,12 +51,7 @@ const Navbar = () => {
 
               <li className={classes.listItem}>
               <Link to="/Patessiries"> Patessiries</Link>
-    {/* <select name="dog-names" id="dog-names" className={classes.servicesDrop}> 
-        <option value="rigatoni">Nos services</option> 
-        <option value="dave">Restaurants</option> 
-        <option value="pumpernickel">Patesseries</option> 
-        <option value="reeses">Superette</option> 
-    </select> */}
+    
    </li>
           </ul>
           
@@ -69,7 +64,7 @@ const Navbar = () => {
           </Link>
          
           {/* <button onClick={handleLogout} className={classes.logout}>Logout</button> */}
-          <button onClick={handleLogin} className={classes.login}>Login </button>
+          <button onClick={handleLogin} className={classes.logout}>Login </button>
 
         </div>
       </div>

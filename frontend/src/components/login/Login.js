@@ -6,7 +6,6 @@ import {Link, useNavigate} from 'react-router-dom'
 import img from '../../assets/womaneating2.jpg'
 import { login } from '../../redux/authSlice'
 import axios from 'axios'
-
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -40,7 +39,7 @@ const Login = () => {
     <div className={classes.loginContainer}>
       <div className={classes.loginWrapper}>
         <div className={classes.loginLeftSide}>
-          <img src={img} className={classes.leftImg}/>
+          <img src={img} className={classes.leftImg} alt='img'/>
         </div>
         <div className={classes.loginRightSide}>
           <h2 className={classes.title}>Login</h2>

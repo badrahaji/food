@@ -12,8 +12,6 @@ const Signup = () => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [role, setRole] = useState('user'); // Default role selected.
-
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -53,35 +51,11 @@ const Signup = () => {
     <div className={classes.signUpContainer}>
       <div className={classes.signUpWrapper}>
         <div className={classes.signUpLeftSide}>
-          <img src={img} className={classes.leftImg} />
+          <img src={img} className={classes.leftImg}  alt='img'/>
         </div>
         <div className={classes.signUpRightSide}>
           <h2 className={classes.title}>Sign Up</h2>
           <form onSubmit={handleSignup} className={classes.signUpForm}>
-          <div className={classes.userrole}>
-          <div>
-        <label>
-          <input
-            type="radio"
-            value="user"
-            checked={role === 'user'}
-            onChange={(e) => setRole(e.target.value)}
-          />
-          Regular User
-        </label>
-      </div>
-          <div>
-        <label>
-          <input
-            type="radio"
-            value="admin"
-            checked={role === 'admin'}
-            onChange={(e) => setRole(e.target.value)}
-          />
-          Administrator
-        </label>
-      </div>
-      </div>
             <input type="text" placeholder="type  name " onChange={(e) => setNom(e.target.value)}/>
             <input type="text" placeholder="type last name " onChange={(e) => setPrenom(e.target.value)}/>
             <input type="email" placeholder="Type email" onChange={(e) => setEmail(e.target.value)}/>

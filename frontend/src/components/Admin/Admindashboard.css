@@ -1,23 +1,14 @@
-.leftSideDashboad{
-    display:flex;
-    flex-direction: column;
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
 }
-.dashboad_container{
+.dashboard{
     display: flex;
-   margin-top: 100px;
-   
-   height: 100%;
-}
-.dashboad_container_leftside{
-    width: 400px;
-    font-size:larger;
-}
-.dashboad_container_rightside{
-    height: 500px;
-    border: 1px solid black;
-}
-.dashboad{
-    margin-top: 100px;
+    margin-top:3rem;
+    padding:0;
+    text-decoration: none;
+    
 }
 .container{
     display:flex;

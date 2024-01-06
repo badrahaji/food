@@ -5,15 +5,12 @@ import illustration1 from '../../assets/male-delivery-guy-riding-scooter.svg'
 import illustration2 from '../../assets/delivery-location.svg'
 import illustration3 from '../../assets/deliveryman-with-pizza.svg'
 import Foods from '../foods/Foods'
-import Newsletter from '../newsletter/Newsletter'
-import NosService from '../NosService '
 
 const Home = () => {
   return (
     <div className={classes.container}>
         <Hero/>
       <div className={classes.wrapper}>
-<NosService/>
         <div className={classes.delivery}>
           <div className={classes.titles}>
             <span className={classes.deliverySubtitle}>Delivery</span>
@@ -35,7 +32,6 @@ const Home = () => {
           </div>
         </div>
         <Foods />
-        {/* <Newsletter /> */}
       </div>
     </div>
   )

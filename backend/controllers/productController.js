@@ -1,6 +1,7 @@
 const productController = require("express").Router()
-const Product = require("../models/restaurentproduct")
+const Product = require("../models/Product")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')
+
 // get all
 productController.get('/', verifyToken, async(req, res) => {
     try {
@@ -10,6 +11,7 @@ productController.get('/', verifyToken, async(req, res) => {
         console.error(error)
     }
 })
+
 // get one
 productController.get('/find/:id', verifyToken, async(req, res) => {
    try {

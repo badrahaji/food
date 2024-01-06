@@ -80,7 +80,7 @@ const Create = () => {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <h2 className={classes.title}>Create food</h2>
+        <h2 className={classes.title}>Create Product</h2>
         <form onSubmit={handleCreateProduct} encType="multipart/form-data">
           <div className={classes.inputWrapper}>
             <label>Title: </label>

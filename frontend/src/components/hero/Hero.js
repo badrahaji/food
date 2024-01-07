@@ -1,7 +1,6 @@
 import React from 'react'
 import classes from './hero.module.css'
 import {AiOutlineArrowDown} from 'react-icons/ai'
-import manEating from '../../assets/man-having-his-meal.svg'
 import slice from "../../imges/Capture.JPG"
 
 const Hero = () => {

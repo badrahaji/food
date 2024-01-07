@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className={classes.wrapper}>
         <div className={classes.left}>
           <Link to='/' className={classes.title}>
-            Starv-H
+          <span style={{color:'black'}}>Feed</span><span style={{fontSize:"30"}}>me</span>
           </Link>
         </div>
         <div className={classes.center}>
@@ -46,18 +46,18 @@ const Navbar = () => {
               <a href="#contacts">Contact</a>
             </li> */}
             <li className={classes.listItem}>
-              <Link to="/Restaurents"> Restaurents</Link>
+              <Link to="/Restaurents"> Restaurant</Link>
               </li>
 
               <li className={classes.listItem}>
-              <Link to="/Patessiries"> Patessiries</Link>
+              <Link to="/Patessiries"> Pâtisserie</Link>
     
    </li>
           </ul>
           
         </div>
         <div className={classes.right}>
-          <AiOutlineUser className={classes.userIcon}/>
+          
           <Link to='/cart' className={classes.cartContainer}>
             <AiOutlineShoppingCart className={classes.cartIcon} />
             <div className={classes.cartQuantity}>{products.length}</div>

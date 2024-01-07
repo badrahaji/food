@@ -24,16 +24,7 @@ import pasta5 from '../assets/pasta5.jpg'
 
 
 export const foodTypes = [
-    {
-        name: 'burger',
-        img: burger1,
-        id: crypto.randomUUID()
-    },
-    {
-        name: 'gyros',
-        img: gyros1,
-        id: crypto.randomUUID()
-    },
+
     { 
         name: 'pizza',
         img: pizza1,

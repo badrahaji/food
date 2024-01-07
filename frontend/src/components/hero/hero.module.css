@@ -1,8 +1,10 @@
 .container{
     height: calc(100vh - 60px);
     width: 100%;
-    margin-top: 5.5rem;
-    margin-bottom: -5.5rem;
+    margin-top: 3.8rem;
+    margin-bottom: -3.5rem;
+    background-color: #f5eabc;
+/* background-image: url('https://popmenucloud.com/cdn-cgi/image/width%3D2880%2Cheight%3D2880%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/aynimcqu/23587edc-d68d-436b-81a7-a30e0d55427b.jpg'); */
 }
 
 .wrapper{
@@ -15,10 +17,11 @@
 }
 
 .title{
+    margin-top: 40px;
     color: #f00;
-    font-size: 46px;
+    font-size: 55px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: -10px;
     white-space: nowrap;
 }
 
@@ -34,7 +37,12 @@
 }
 
 .secondMsg{
-    font-size: 26px;
+    
+    margin-top: 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+
 }
 
 .secondMsg > span{
@@ -100,7 +108,9 @@
 }
 
 .manEatingImg{
-    height: 70%;
-    width: 100%;
+    margin-top: 2.5rem;
+ border-radius: 50%;
+    height: 85%;
+    width: 90%;
     object-fit: cover;
 }

@@ -2,7 +2,7 @@ const productController = require("express").Router()
 const Product = require("../models/Product")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')
 
-// get all
+// get all restaurents products
 productController.get('/', async (req, res) => {
     try {
       const products = await Product.find({});
@@ -12,7 +12,16 @@ productController.get('/', async (req, res) => {
       res.status(500).json({ message: "Error fetching the products." });
     }
   });
-
+// get all patesserie products
+productController.get('/', async (req, res) => {
+  try {
+    const products = await Product.find({type : "sucre"});
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error fetching the products." });
+  }
+});
 // get one
 productController.get('/find/:id', verifyToken, async(req, res) => {
    try {

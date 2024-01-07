@@ -1,13 +1,20 @@
 .container{
+  width: 100%;
+  margin-top: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     
 }
+ 
 .restaurent-products{
+
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px; /* space between products */
+    padding: 20px;
+  
   }
 .restaurant-card {
     width: 250px;

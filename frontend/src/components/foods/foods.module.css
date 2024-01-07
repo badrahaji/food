@@ -34,15 +34,15 @@
 
 .foods{
     display: flex;
-    align-items: center;
-    gap: 36px;
-}
 
+    gap: 36px;
+    width: 300px;
+justify-content: space-between;
+}
 .food{
     text-decoration: none;
     color: inherit;
 }
-
 .food > h4{
     text-align: center;
     margin-bottom: 12px;

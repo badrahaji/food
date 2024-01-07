@@ -7,8 +7,8 @@ const Foods = () => {
   return (
     <section id="foods" className={classes.container}>
       <div className={classes.wrapper}>
-        <h4 className={classes.subtitle}>What we offer</h4>
-        <h2 className={classes.title}>Best meals in the city</h2>
+        <h4 className={classes.subtitle}>Nos offres</h4>
+        <h2 className={classes.title}>Meilleurs plats à coté de chez toi </h2>
         <div className={classes.foods}>
           {foodTypes.map((foodType) => (
             <Link to={`/foods/${foodType.name}`} key={foodType.id} className={classes.food}>

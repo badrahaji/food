@@ -45,33 +45,36 @@ const FoodDetails = () => {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <div className={classes.left}>
+       
           <img src={`http://localhost:5000/images/${foodDetails?.img}`}/>
-        </div>
-        <div className={classes.right}>
+       
+      
           <h2 className={classes.title}>{foodDetails?.title}</h2>
-          <div className={classes.price}>
-            Price: <span>$</span> {foodDetails?.price}
+          
+          
+          
+          
+            <h3>Category: </h3>
+            <span>{foodDetails?.category}</span>
           </div>
+          
+            <div>Description: </div>
+            <p>
+              {foodDetails?.desc?.length > 50 ? `${foodDetails?.desc}`.slice(0, 50) : foodDetails?.desc}
+            </p>
+          
           <div className={classes.quantity}>
             <button disabled={quantity === 1} onClick={() => changeQuantity('dec')}>-</button>
             <span className={classes.quantityNumber}>{quantity}</span>
             <button onClick={() => changeQuantity('inc')}>+</button>
           </div>
-          <div className={classes.category}>
-            <h3>Category: </h3>
-            <span className={classes.categoryName}>{foodDetails?.category}</span>
-          </div>
-          <div className={classes.productDesc}>
-            <div>Description: </div>
-            <p>
-              {foodDetails?.desc?.length > 50 ? `${foodDetails?.desc}`.slice(0, 50) : foodDetails?.desc}
-            </p>
+          <div className={classes.price}>
+            Price: <span>$</span> {foodDetails?.price}
           </div>
           <button onClick={addToCart} className={classes.addToCart}>Add To Cart <AiOutlineShoppingCart /></button>
         </div>
-      </div>
-    </div>
+      
+    
   )
 }
 

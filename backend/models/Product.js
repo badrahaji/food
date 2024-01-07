@@ -1,11 +1,9 @@
 const mongoose = require("mongoose")
 
 const ProductSchema = new mongoose.Schema({
-    
     type: {
         type: String,
         required: true,
-        min: 4,
     },
     title: {
         type: String,

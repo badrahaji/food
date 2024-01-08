@@ -3,7 +3,8 @@ import axios from "axios";
 import "./restaurent.css";
 import FoodDetails from "../foodDetails/FoodDetails";
 import FilterComponent from "./FilterComponent";
-
+import ImageSlider from "./ImageSlider";
+import images from "./images";
 const RestaurantMenu = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([
@@ -73,7 +74,10 @@ const RestaurantMenu = () => {
   
   return (
     <div className="container">
-      
+      <div className="slider">
+      <ImageSlider images={images}/>
+      </div>
+      <div>
       <div className="filter-container">
       <FilterComponent
          categories={categories}
@@ -93,6 +97,7 @@ const RestaurantMenu = () => {
         ) : (
           <p>No products found</p>
         )}
+      </div>
       </div>
       </div>
     </div>

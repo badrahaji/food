@@ -15,7 +15,7 @@ productController.get('/', async (req, res) => {
   });
 
 // get all patesserie products
-productController.get('/', async (req, res) => {
+productController.get('/patisserie-products', async (req, res) => {
   try {
     const products = await Product.find({type : "sucre"});
     res.json(products);

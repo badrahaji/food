@@ -10,11 +10,11 @@ import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
 import {useLocation} from 'react-router-dom'
 import { useEffect } from 'react';
-import Patesseries from './components/pattesserie/Patesseries';
 import Users from './components/Admin/UserList';
 import AdminDashboard from './components/Admin/AdminDashboard'
 import RestaurantMenu from './components/restaurents/RestaurantMenu';
 import AdminLogin from './components/Admin/AdminLogin';
+import PatisserieMenu from './components/pattesserie/PatisserieMenu';
 function App() {
  const location = useLocation()
  
@@ -33,7 +33,7 @@ function App() {
            <Route path='/cart' element={<Cart />} />
          <Route path='/checkout' element={<Checkout />} />
          <Route path='/Restaurents' element={<RestaurantMenu />}/>
-         <Route path='/Patessiries' element={<Patesseries/>} />
+         <Route path='/Patessiries' element={<PatisserieMenu/>} />
        <Route path='/' element={<Home />} />
        </Routes>
        <Footer />

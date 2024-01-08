@@ -7,12 +7,10 @@ import { useEffect } from 'react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { addProduct } from '../../redux/cartSlice'
 
-const FoodDetails = ({type,title,desc,price,img,review,category}) => {
-  const [foodDetails, setFoodsDetails] = useState({type,title,desc,price,img,review,category})
+const FoodDetails = ({_id,type,title,desc,price,img,review,category}) => {
+  const [foodDetails, setFoodsDetails] = useState({_id,type,title,desc,price,img,review,category})
   const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch()
-  const {id} = useParams()
-  // const {token} = useSelector((state) => state.auth)
   const {products} = useSelector((state) => state.cart)
   console.log(products)
 
@@ -30,16 +28,11 @@ const FoodDetails = ({type,title,desc,price,img,review,category}) => {
   }
 
   return (
-    <div className={classes.container}>
+    <div key={_id} className={classes.container}>
       <div className={classes.wrapper}>
        
           <img src={img}/>
-       
-      
-          
-          
-          
-          
+
           </div>
           <h2 className={classes.title}>{title}</h2>
             <h3>Category: {category}</h3>

@@ -7,7 +7,7 @@ orderController.get('/', async (req, res) => {
         const orders = await Order.find({})
           .populate({
             path: "userId",
-            select: "nom prenom"
+            select: "nom prenom email"
           })
           .populate({
             path: "items.productId",
@@ -37,5 +37,6 @@ orderController.post('/', verifyToken, async (req, res) => {
       });
     }
   });
-  
+
   module.exports = orderController;
+  

@@ -3,7 +3,44 @@
     width: 100%;
     margin: 10rem 0;
 }
-
+.loginAlert {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 50px;
+    gap: 20px;
+    position: fixed; /* or 'absolute' depending on your layout */
+    top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 16px;
+    border-radius: 5px;
+    background-color: #2ea4df; /* Light red background for visibility */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(31, 30, 30, 0.461);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }.showLoginAlert  button:hover{
+    cursor: pointer;
+    inset: none;
+  }
+  .showLoginAlert  button{
+    background-color: red;
+    border-radius:50%;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    border: none;
+  }
+  /* Class to toggle visibility and opacity */
+  .showLoginAlert {
+    opacity: 1;
+    visibility: visible;
+  }
+  
 .wrapper{
     margin: 0 auto;
     height: 100%;
@@ -123,4 +160,76 @@
     font-weight: bold;
     font-size: 40px;
     color: #333;
+}
+/* Responsive adaptations for the login alert */
+@media (max-width: 768px) {
+    .loginAlert {
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 3px;
+    }
+}
+
+/* ... Rest of your styles ... */
+
+.wrapper {
+    margin: 0 auto;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow items to wrap in small screens */
+}
+
+.left, .right {
+    flex: 1 0 50%; /* Basis at 50% width, grow and shrink */
+}
+
+@media (max-width: 768px) {
+    .left, .right {
+        flex-basis: 100%; /* Stack them on mobile */
+    }
+}
+
+/* ... More styles ... */
+
+@media (max-width: 768px) {
+    .closeBtn {
+        left: auto; /* Adjust close button positioning */
+        right: 10px; /* Keep it towards the right */
+    }
+    
+    .totalProductMsg, .subtotalCheckoutBtns, .subtotal, .orderNowBtn {
+        text-align: center; /* Center elements on mobile */
+    }
+    
+    .subtotalCheckoutBtns {
+        flex-direction: column; /* Stack buttons and subtotal vertically */
+        align-items: center;
+    }
+    
+    .subtotal {
+        margin: 0; /* Remove margin for mobile */
+        margin-bottom: 1rem; /* Add space below on small screens */
+    }
+    
+    .product {
+        flex-direction: column; /* Stack product image and details */
+        align-items: center;
+    }
+    
+    .price > span, .quantity {
+        text-align: center; /* Center text for mobile */
+    }
+    
+    .noProducts {
+        font-size: 24px; /* Reduce font size on mobile */
+    }
+}
+
+/* It's important to also adjust other interactive elements for touch screens */
+@media (max-width: 768px) {
+    .orderNowBtn {
+        padding: 0.75rem 1.5rem; /* Make buttons larger for better touch targets */
+    }
 }

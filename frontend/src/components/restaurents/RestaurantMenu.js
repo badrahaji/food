@@ -74,10 +74,11 @@ const RestaurantMenu = () => {
   
   return (
     <div className="container">
-      <div className="slider">
+          <div className="slider">
       <ImageSlider images={images}/>
       </div>
-      <div>
+      <div className="content-container">
+
       <div className="filter-container">
       <FilterComponent
          categories={categories}
@@ -92,7 +93,7 @@ const RestaurantMenu = () => {
       <div>
         {products.length > 0 ? (
           filteredProducts.map((product) => (
-            <FoodDetails key={product.id} {...product} />
+            <FoodDetails key={product._id} {...product} />
           ))
         ) : (
           <p>No products found</p>

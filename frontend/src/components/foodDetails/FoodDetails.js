@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { addProduct } from '../../redux/cartSlice'
 
-const FoodDetails = () => {
+const FoodDetails = ({type,title,desc,price,img,review,category}) => {
   const [foodDetails, setFoodsDetails] = useState('')
   const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch()
@@ -18,10 +18,7 @@ const FoodDetails = () => {
 
   useEffect(() => {
      const fetchFoodDetails = async() => {
-      const res = await fetch(`http://localhost:5000/product/find/${id}`, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        }
+      const res = await fetch(`http://localhost:5000/product/find/:id`, {
       })
       const data = await res.json()
       setFoodsDetails(data)
@@ -46,21 +43,21 @@ const FoodDetails = () => {
     <div className={classes.container}>
       <div className={classes.wrapper}>
        
-          <img src={`http://localhost:5000/images/${foodDetails?.img}`}/>
+          <img src={img}/>
        
       
-          <h2 className={classes.title}>{foodDetails?.title}</h2>
           
           
           
           
-            <h3>Category: </h3>
-            <span>{foodDetails?.category}</span>
           </div>
+            <h3>Category: </h3>
+            <span>{category}</span>
+          <h2 className={classes.title}>{title}</h2>
           
             <div>Description: </div>
             <p>
-              {foodDetails?.desc?.length > 50 ? `${foodDetails?.desc}`.slice(0, 50) : foodDetails?.desc}
+              {desc}
             </p>
           
           <div className={classes.quantity}>
@@ -69,7 +66,7 @@ const FoodDetails = () => {
             <button onClick={() => changeQuantity('inc')}>+</button>
           </div>
           <div className={classes.price}>
-            Price: <span>$</span> {foodDetails?.price}
+            Price: <span>$</span> {price}
           </div>
           <button onClick={addToCart} className={classes.addToCart}>Add To Cart <AiOutlineShoppingCart /></button>
         </div>

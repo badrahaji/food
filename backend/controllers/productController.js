@@ -23,26 +23,68 @@ productController.get('/', async (req, res) => {
   }
 });
 // get one
-productController.get('/find/:id', verifyToken, async(req, res) => {
-   try {
-    const productId = req.params.id
-    const product = await Product.findById(productId)
-    if(!product){
-        return res.status(500).json({msg: "No product with such id!"})
-    }
-    return res.status(200).json(product)
-   } catch (error) {
-    console.error(error)
-   }
-})
+productController.get('/:id', async (req, res) => {
+  try {
+     const productId = req.params.id;
+     const product = await Product.findById(productId);
+     
+     if (!product) {
+        // Send a 404 Not Found status with a message
+        return res.status(404).json({ msg: "No product with the specified ID was found." });
+     }
+     
+     // If the product is found, send it back with a 200 OK status.
+     return res.status(200).json(product);
+  } catch (error) {
+     console.error(error);
+     // Send a 500 Internal Server Error status with an error message.
+     return res.status(500).json({ msg: "An error occurred while retrieving the product.", error: error.message });
+  }
+});
 // create product
-productController.post('/', verifyTokenAdmin, async(req, res) => {
+productController.post('/', async(req, res) => {
     try {
-        const newProduct = await Product.create({...req.body})
-        return res.status(201).json(newProduct)
-    } catch (error) {
-        console.error(error)
-    }
-})
+      const newProduct = await Product.create({...req.body});
+        
+      // Send a 201 Created status with the new product's data.
+      return res.status(201).json(newProduct);
+  } catch (error) {
+      console.error(error);
+
+      // Send a 500 Internal Server Error status with an error message.
+      return res.status(500).json({
+          msg: "There was a problem creating the product.",
+          error: error.message
+    });
+  }
+});
+// delete a product 
+productController.delete('/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+
+      // Assuming there's a method to find and remove the product by ID.
+      const deletedProduct = await Product.findByIdAndRemove(id);
+
+      if (!deletedProduct) {
+          // If no product is found with that ID, send a 404 Not Found status.
+          return res.status(404).json({ msg: "Product not found." });
+      }
+
+      // Send a 200 OK status with a success message or the deleted product info.
+      return res.status(200).json({
+          msg: "Product successfully deleted.",
+          product: deletedProduct
+      });
+  } catch (error) {
+      console.error(error);
+
+      // Send a 500 Internal Server Error status with an error message.
+      return res.status(500).json({
+          msg: "There was a problem deleting the product.",
+          error: error.message
+      });
+  }
+});
 
 module.exports = productController

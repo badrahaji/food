@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './cart.module.css'
 import {useDispatch, useSelector} from 'react-redux'
 import {AiOutlineClose} from 'react-icons/ai'
 import { removeProduct } from '../../redux/cartSlice'
 import {useNavigate} from 'react-router-dom'
-
+import axios from 'axios';
 const Cart = () => {
-  const {products} = useSelector((state) => state.cart)
+  const {products} = useSelector((state) => state.cart);
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  const {token, user} = useSelector((state)=>state.auth); // Including the user object here
+  const userId = user?._id; 
+  const nom = user?.nom;
+  const prenom = user?.prenom
   let totalPrice = 0
   products.map((product) => totalPrice += (product.quantity * product.price))
 
@@ -17,12 +20,50 @@ const Cart = () => {
     console.log(id)
      dispatch(removeProduct({_id: id}))
   }
-
-  const handleOrder = () => {
-    if(products.length > 0){
-      navigate('/checkout')
+  const submitOrder = async (orderDetails) => {
+    try {
+      const response = await axios.post('http://localhost:5000/order', orderDetails, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    
+      console.log('Order submitted: ', response.data);
+      // Optionally, do something after the order is successfully submitted...
+    } catch (error) {
+      console.error('Error submitting order: ', error);
+      if (error.response && error.response.status === 401) {
+        console.error('Authorization failed. Please log in again.');
+        alert('Authorization failed. Please log in again.');
+        // e.g., Redirect to login or display an error message
+      }
     }
-  }
+  };
+  const handleOrder = async () => {
+    if (products.length > 0 && userId) {
+      // Construct the order details object with 'items' and 'userId'
+      const orderDetails = {
+        userId: userId,
+        nom: nom,
+        prenom: prenom,
+        items: products.map(product => ({
+          productId: product._id, // Use _id field of the product for reference
+          quantity: product.quantity,
+           // Include the quantity ordered
+          // Additional fields can be included here as required by your Order model
+        })),totalPrice: totalPrice,
+       
+      };
+  
+      console.log('Submitting order with details:', orderDetails);
+  
+      await submitOrder(orderDetails);
+      navigate('/checkout');
+    } else {
+      // Handle the error case when no user id is available (e.g., the user is not logged in)
+      console.error('User ID is not available. User might not be logged in.');
+    }
+  };
 
   return (
     <div className={classes.container}>
@@ -31,7 +72,7 @@ const Cart = () => {
           {products.length > 0 ? products.map((product) => (
               <div key={product._id} className={classes.product}>
                 <div onClick={() =>handleRemoveProduct(product._id)} className={classes.closeBtn}><AiOutlineClose /></div>
-                <img src={`http://localhost:5000/images/${product.img}`} className={classes.img}/>
+                <img src={product.img} className={classes.img}/>
                 <div className={classes.productData}>
                   <h3 className={classes.title}>{product.title}</h3>
                   <div className={classes.productAndQuantity}>

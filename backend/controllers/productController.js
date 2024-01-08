@@ -1,5 +1,6 @@
 const productController = require("express").Router()
 const Product = require("../models/Product")
+// const user = require("../models/User")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')
 
 // get all restaurents products
@@ -12,6 +13,7 @@ productController.get('/', async (req, res) => {
       res.status(500).json({ message: "Error fetching the products." });
     }
   });
+
 // get all patesserie products
 productController.get('/', async (req, res) => {
   try {
@@ -20,7 +22,7 @@ productController.get('/', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error fetching the products." });
-  }
+  } 
 });
 // get one
 productController.get('/:id', async (req, res) => {
@@ -41,6 +43,7 @@ productController.get('/:id', async (req, res) => {
      return res.status(500).json({ msg: "An error occurred while retrieving the product.", error: error.message });
   }
 });
+
 // create product
 productController.post('/', async(req, res) => {
     try {

@@ -6,6 +6,7 @@ const authController = require('./controllers/authController')
 const productController = require('./controllers/productController')
 const uploadController = require('./controllers/uploadController')
 const userRoutes = require('./routes/userRoutes');
+const orderController = require('./controllers/orderController')
 const app = express()
 
 
@@ -21,7 +22,8 @@ app.use(express.urlencoded({extended: true}))
 app.use('/images', express.static('public/images'))
 app.use('/auth', authController)
 app.use('/users', userRoutes,authController);
-app.use('/product', productController)
+app.use('/product', productController),
+app.use('/order', orderController);
 app.use('/upload', uploadController)
 // start our server
 app.listen(process.env.PORT, () => console.log(`Server has been started successfully ${process.env.PORT}`))

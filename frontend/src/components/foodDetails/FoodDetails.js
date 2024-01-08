@@ -8,23 +8,13 @@ import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { addProduct } from '../../redux/cartSlice'
 
 const FoodDetails = ({type,title,desc,price,img,review,category}) => {
-  const [foodDetails, setFoodsDetails] = useState('')
+  const [foodDetails, setFoodsDetails] = useState({type,title,desc,price,img,review,category})
   const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch()
   const {id} = useParams()
-  const {token} = useSelector((state) => state.auth)
+  // const {token} = useSelector((state) => state.auth)
   const {products} = useSelector((state) => state.cart)
   console.log(products)
-
-  useEffect(() => {
-     const fetchFoodDetails = async() => {
-      const res = await fetch(`http://localhost:5000/product/find/:id`, {
-      })
-      const data = await res.json()
-      setFoodsDetails(data)
-     }
-     fetchFoodDetails()
-  }, [id])
 
   const changeQuantity = (command) => {
     if(command === 'dec'){
@@ -51,13 +41,13 @@ const FoodDetails = ({type,title,desc,price,img,review,category}) => {
           
           
           </div>
-            <h3>Category: </h3>
-            <span>{category}</span>
           <h2 className={classes.title}>{title}</h2>
+            <h3>Category: {category}</h3>
+            <span></span>
           
-            <div>Description: </div>
+            <div>Description:{desc} </div>
             <p>
-              {desc}
+              
             </p>
           
           <div className={classes.quantity}>

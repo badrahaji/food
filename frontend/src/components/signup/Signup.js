@@ -9,6 +9,7 @@ import axios from 'axios';
 const Signup = () => {
   const [nom, setNom] = useState("")
   const [prenom, setPrenom] = useState("")
+  const [tel, setTel] = useState("")
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -20,7 +21,7 @@ const Signup = () => {
     try {
       const res = await axios.post(`http://localhost:5000/auth/register`, {
         nom,
-        prenom,
+        prenom,tel,
         email,
         password
       }, {
@@ -58,6 +59,7 @@ const Signup = () => {
           <form onSubmit={handleSignup} className={classes.signUpForm}>
             <input type="text" placeholder="type  name " onChange={(e) => setNom(e.target.value)}/>
             <input type="text" placeholder="type last name " onChange={(e) => setPrenom(e.target.value)}/>
+            <input type="text" placeholder=" Numero téléphone" onChange={(e) => setTel(e.target.value)}/>
             <input type="email" placeholder="Type email" onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Type password"  onChange={(e) => setPassword(e.target.value)}/>
             <button className={classes.submitBtn}>Sign Up</button>

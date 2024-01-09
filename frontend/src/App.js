@@ -10,11 +10,11 @@ import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
 import {useLocation} from 'react-router-dom'
 import { useEffect } from 'react';
-import Users from './components/Admin/UserList';
 import AdminDashboard from './components/Admin/AdminDashboard'
 import RestaurantMenu from './components/restaurents/RestaurantMenu';
-import AdminLogin from './components/Admin/AdminLogin';
 import PatisserieMenu from './components/pattesserie/PatisserieMenu';
+import ProtectedRoute from './components/Admin/ProtectedRoute';
+
 function App() {
  const location = useLocation()
  
@@ -26,10 +26,14 @@ function App() {
        <Navbar />
        <Routes>
          <Route path='/login' element={<Login />} />
-         <Route path='/adminlogin' element={<AdminLogin/>} />
          <Route path='/signup' element={<Signup />} />
-         <Route path="/dashboard/*" element={<AdminDashboard />} />
-          <Route path="admin/users" element={<Users/>} />
+         <Route path="/dashboard/*" 
+          element={
+            <ProtectedRoute>
+              <AdminDashboard/>
+            </ProtectedRoute>
+          }
+        />
            <Route path='/cart' element={<Cart />} />
          <Route path='/checkout' element={<Checkout />} />
          <Route path='/Restaurents' element={<RestaurantMenu />}/>

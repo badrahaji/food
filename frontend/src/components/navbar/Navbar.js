@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const {products} = useSelector((state) => state.cart)
   const {token} = useSelector((state)=>state.auth)
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   
@@ -41,12 +42,11 @@ const Navbar = () => {
           <li className={classes.listItem}>
               <Link to='/'>Accueil</Link>
             </li>
-            <li className={classes.listItem}>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
-            {/* <li className={classes.listItem}>
-              <a href="#contacts">Contact</a>
-            </li> */}
+            {user?.isAdmin && (
+              <li className={classes.listItem}>
+                <Link to='/dashboard'>Dashboard</Link>
+              </li>
+            )}
             <li className={classes.listItem}>
               <Link to="/Restaurents"> Restaurant</Link>
               </li>
@@ -64,9 +64,7 @@ const Navbar = () => {
             <AiOutlineShoppingCart className={classes.cartIcon} />
             <div className={classes.cartQuantity}>{products.length}</div>
           </Link>
-         
-          {/* <button onClick={handleLogout} className={classes.logout}>Logout</button> */}
-          <button onClick={handleLogin} className={classes.logout}>{token?"logout":"login"} </button>
+            <button onClick={handleLogin} className={classes.logout}>{token?"logout":"login"} </button>
 
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { foodTypes } from '../../data/data'
 import {Link} from 'react-router-dom'
+import saller from "../../assets/saller.jpg";
 import classes from './foods.module.css'
 
 const Foods = () => {
@@ -10,14 +10,20 @@ const Foods = () => {
         <h4 className={classes.subtitle}>Nos offres</h4>
         <h2 className={classes.title}>Meilleurs plats à coté de chez toi </h2>
         <div className={classes.foods}>
-          {foodTypes.map((foodType) => (
-            <Link to={`/foods/${foodType.name}`} key={foodType.id} className={classes.food}>
-              <h4>{foodType.name}</h4>
+          
+            <Link to={`/Restaurents`} className={classes.food}>
+              <h4>Sallé</h4>
               <div className={classes.imgContainer}>
-                <img src={foodType.img}/>
+                <img src={saller}/>
               </div>
             </Link>
-          ))}
+            <Link to={`/Patessiries`} className={classes.food}>
+              <h4>Surcé</h4>
+              <div className={classes.imgContainer}>
+                <img src={saller}/>
+              </div>
+            </Link>
+            
         </div>
       </div>
     </section>

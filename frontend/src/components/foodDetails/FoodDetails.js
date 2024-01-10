@@ -2,8 +2,7 @@ import React from 'react'
 import classes from './foodDetails.module.css'
 import { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {useParams} from 'react-router-dom'
-import { useEffect } from 'react'
+
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { addProduct } from '../../redux/cartSlice'
 
@@ -28,7 +27,7 @@ const FoodDetails = ({_id,type,title,desc,price,img,review,category}) => {
   }
 
   return (
-    <div key={_id} className={classes.container}>
+    <div className={classes.container}>
       <div className={classes.wrapper}>
        
           <img src={img}/>

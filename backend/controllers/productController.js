@@ -90,4 +90,25 @@ productController.delete('/:id', async (req, res) => {
   }
 });
 
+productController.put('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { type, title, desc, price, img, review, category, commander } = req.body;
+    const updatedProduct = await Product.findByIdAndUpdate(
+      id,
+      { type, title, desc, price, img, review, category, commander },
+      { new: true }
+    );
+    
+    if (!updatedProduct) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    res.json(updatedProduct);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 module.exports = productController

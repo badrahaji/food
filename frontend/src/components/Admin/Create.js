@@ -2,22 +2,19 @@ import React from 'react'
 import classes from './create.module.css'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
 const Create = () => {
+  const [type, setType] = useState("");
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
   const [category, setCategory] = useState("")
   const [image, setImage] = useState("")
   const [price, setPrice] = useState("")
   const [review, setReview] = useState("")
-  const navigate = useNavigate()
-  // we get the auth slice from the entire state, which(auth slice) 
-  // is the userInfo and the token
   const { token } = useSelector((state) => state.auth)
-
+  const [isCreatedSuccess, setIsCreatedSuccess] = useState(false);
 
   // type="file", e.target.files[0]
   const onChangeFile = (e) => {
@@ -57,6 +54,7 @@ const Create = () => {
         },
         method: 'POST',
         body: JSON.stringify({
+          type,
           title,
           desc,
           category,
@@ -64,12 +62,25 @@ const Create = () => {
           price,
           review
         })
+        
       })
-
-      const food = await res.json()
-
-      navigate(`/food/${food._id}`)
-
+      if (res.ok) {
+        setIsCreatedSuccess(true);
+       
+        // Reset form fields
+        setType("");
+        setTitle("");
+        setDesc("");
+        setCategory("");
+        setImage("");
+        setPrice("");
+        setReview("");
+      
+        // Optionally, you can navigate to another page or perform other actions.
+      
+        // We may also want to automatically hide the success message after a few seconds
+        setTimeout(() => setIsCreatedSuccess(false), 5000); // 5 seconds delay
+      }
     } catch (error) {
       console.error(error.message)
     }
@@ -78,19 +89,38 @@ const Create = () => {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
+      {isCreatedSuccess && (
+        <div className={classes.successMessage}>
+          Product created successfully!
+        </div>
+      )}
         <h2 className={classes.title}>Create Product</h2>
         <form onSubmit={handleCreateProduct} encType="multipart/form-data">
           <div className={classes.inputWrapper}>
+          <div className={classes.inputWrapper}>
+              <label htmlFor="type">Type</label>
+              <select
+                id="type"
+                value={type}
+
+                onChange={(e) => setType(e.target.value)}
+                className="form-control"
+              required>
+                <option value="">Select Type</option>
+                <option value="sale">Sallé</option>
+                <option value="sucre">Sucré</option>
+              </select>
+            </div>
             <label>Title: </label>
             <input type="text"
               placeholder='Title...'
               className={classes.input}
               onChange={(e) => setTitle(e.target.value)}
-            />
+            required/>
           </div>
           <div className={classes.inputWrapper}>
             <label>Description: </label>
-            <input type="text"
+            <input required type="text"
               placeholder='Description...'
               className={classes.input}
               onChange={(e) => setDesc(e.target.value)}
@@ -98,7 +128,7 @@ const Create = () => {
           </div>
           <div className={classes.inputWrapper}>
             <label>Category: </label>
-            <input type="text"
+            <input required type="text"
               placeholder='Category...'
               className={classes.input}
               onChange={(e) => setCategory(e.target.value)}
@@ -117,8 +147,8 @@ const Create = () => {
           </div>
           <div className={classes.inputWrapper}>
             <label>Price: </label>
-            <input type="number"
-              step={0.01}
+            <input required type="number"
+              step={1}
               placeholder='Price...'
               className={classes.input}
               onChange={(e) => setPrice(e.target.value)}
@@ -126,8 +156,8 @@ const Create = () => {
           </div>
           <div className={classes.inputWrapper}>
             <label>Review: </label>
-            <input type="number"
-              step={0.1}
+            <input required type="number"
+              step={0.5}
               min={1}
               max={5}
               placeholder='Review...'

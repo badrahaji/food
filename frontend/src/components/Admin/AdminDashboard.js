@@ -2,7 +2,6 @@
 import React from 'react'
 import Sidebar from '../Sidebar'
 import { Route, Routes } from 'react-router'
-import About from './About'
 import ProductList from './ProductList'
 import './Admindashboard.css'
 import Create from './Create'
@@ -12,11 +11,12 @@ import Commandes from './Commandes'
 const AdminDashboard = () => {
   return (
     <div className='dashboard'>
-      
-        <Sidebar />
+       <div className="sidebar">
+          <Sidebar/>
+        </div>
         <main className="content">
           <Routes>
-            <Route path="/about" element={<About />} />
+           
             <Route path="/create-product" element={<Create/>} />
             <Route path="/commandes" element={<Commandes/>} />
             <Route path="/userlist" element={<UserList />} />

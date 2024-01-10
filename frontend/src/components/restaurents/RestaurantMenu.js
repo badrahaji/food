@@ -87,10 +87,8 @@ const RestaurantMenu = () => {
          onPriceChange={handlePriceChange}
         />
       </div>
-      <div className="restaurent-products">
+      <div className="restaurant-products">
 
-      
-      <div>
         {products.length > 0 ? (
           filteredProducts.map((product) => (
             <FoodDetails key={product._id} {...product} />
@@ -101,7 +99,6 @@ const RestaurantMenu = () => {
       </div>
       </div>
       </div>
-    </div>
   );
 };
 export default RestaurantMenu;

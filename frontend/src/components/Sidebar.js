@@ -16,8 +16,10 @@ const Sidebar = ({children}) => {
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/about",
-            name:"About",
+            path:"/productList",
+            name:"Product List",
+        
+    
             icon:<FaShoppingBag/>
         },
         {
@@ -35,11 +37,7 @@ const Sidebar = ({children}) => {
             name:"User List",
             icon:<FaUserAlt/>
         },
-        {
-            path:"/productList",
-            name:"Product List",
-            icon:<FaThList/>
-        }
+      
     ]
     return (
         <div className="container">

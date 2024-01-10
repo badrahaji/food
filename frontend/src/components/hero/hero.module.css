@@ -106,7 +106,11 @@
     width: 95%; /* adjusted for responsiveness */
     object-fit: cover;
 }
-
+@media (max-width: 768px) {
+    .manEating {
+      margin: 10px 0; /* Adjust margins as needed for smaller screens */
+    }
+  }
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .wrapper {

@@ -7,7 +7,7 @@ orderController.get('/', async (req, res) => {
         const orders = await Order.find({})
           .populate({
             path: "userId",
-            select: "nom prenom email"
+            select: "nom prenom email tel"
           })
           .populate({
             path: "items.productId",

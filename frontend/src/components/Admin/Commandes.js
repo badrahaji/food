@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import './Commandes.css'; // Importing the CSS file
-// import UserLocation from "../userlocation/Userlocation"
+import './Commandes.css';
+
 const Commandes = () => {
     const [data, setData] = useState([]);
 
@@ -18,10 +18,10 @@ const Commandes = () => {
             <h1 className="title">List of Orders</h1>
             <ul className="order-list">
                 {data.map((order) => (
-                    <li className="order-item" key={order._id}>
-                        <span className="user-name">{order.userId?.nom} {order.userId?.prenom}</span>
+                    <li className="order-item" key={order._id} >
+                        <span className="user-name">{order.userId?.nom} {order.userId?.prenom} {order.userId?.tel}</span>
                         <span className="user-email">{order.userId?.email}</span>
-                        <span className="user-email">à payer  : {order.totalPrice}$</span>
+                        <span className="user-email">à payer : {order.totalPrice}$</span>
                         {/* Show other details like items and totalPrice if needed */}
                     </li>
                 ))}
